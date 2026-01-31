@@ -9,6 +9,11 @@
   animation: fadeIn .8s ease forwards;
 }
 
+/* 平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
 
 @font-face {
     font-family: 'Minecraft'; 
@@ -73,12 +78,15 @@ body.dark hr {
 				background-color: #FFF;
 }
 
-h1 {
+h1,
+.box-3 h5 {
 			 margin-left: 10px;
  			font-family: MinecraftTen;
+ 			line-height: 0.5;
 }
-h3 {
-				line-height: 0.5;
+h3,
+h5 {
+				line-height: 1;
 }
 body.dark h1,
 body.dark h3,
@@ -114,6 +122,38 @@ body.dark .box,
 body.dark button {
 				background-color: rgba(255,255,255,0.1);
 				box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+.begin box {
+				margin: 0;
+}
+
+.box-2 {
+				background-color: rgba(0,0,0,0.2);
+				min-height: 20px;
+				border-radius: 5px;
+				padding: 5px;
+}
+.box-2 img {
+				width: 100%;
+				border-radius: 5px;
+				display: block;
+}
+.box-3 {
+				min-height: 20px;
+				border-radius: 6px;
+				padding: 0;
+				margin-bottom: 0px;
+				border:2px solid rgba(0,0,0,0.1);
+}
+.box-3 p {
+				margin-left: 10px;
+				white-space: pre-line;
+}
+.box-button {
+				display: block;
+				margin-top: 5px;
+				width: 100%;
+				padding: 10px;
 }
 
 /* 1w */
@@ -163,7 +203,7 @@ body.dark button {
     user-select: none;
     overflow: hidden;
     transition: max-height .3s ease;
-    max-height: 18px;
+    max-height: 16px;
 }
 /* 展开后 */
 .update-card.open {
@@ -187,7 +227,7 @@ body.dark button {
 /* 日志列表默认隐藏 */
 .update-list {
     margin: 2px 0 0 10px;
-    font-size: 2px;
+    font-size: 10px;
     white-space: pre-line;
 }
 
