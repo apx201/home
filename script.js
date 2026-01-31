@@ -48,3 +48,25 @@ darkModeMediaQuery.addEventListener('change', (e) => {
         applyTheme(newTheme, true);
     }
 });
+
+//页面动画
+// 1. 选中所有需要动画的元素（按需改选择器）
+const nodes = document.querySelectorAll('h1,h2,h3,p,img,section,div,li');
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(({ target, isIntersecting }) => {
+    if (isIntersecting) {
+      target.classList.add('fade');
+      io.unobserve(target);   // 只做一次
+    }
+  });
+}, { threshold: 0.2 });
+
+// 2. 全部扔进观察列表
+nodes.forEach(el => io.observe(el));
+
+
+ //日志展开收起
+  document.getElementById('updateCard').addEventListener('click', function () {
+    this.classList.toggle('open');
+  });

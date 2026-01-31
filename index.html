@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APX201首页</title>
+    <meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               minimum-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/ico" href="favicon.ico">
 </head>
 <body>
     <h1>SPACE201:首页</h1>
     <hr>
-    <div class="box">
+    <div class="box"><!--  -->
     				<h3>关于此站</h3>
     				<p>本站是APX201的个人网站。这里展示了他的一些个人项目。</p>
     </div>
@@ -38,7 +44,7 @@
     				</table>
     </div>
     
-    <div class="box">
+    <div class="box"><!--  -->
     				<h3>相关项目</h3>
     				<p>此处展示了其他项目链接。</p>
     				<table style="width:100%;font-size:14px;">
@@ -54,11 +60,36 @@
     				</table>
     </div>
     
-    <div class="box" style="background-color:rgba(0,0,0,0.2);padding:0;text-align:center;">
+    <div class="box gold"><!--  -->
+    				<h3>感谢有你</h3>
+    				<div class="split">
+    								<div class="left" style="font-size:12px">2025年12月20日，站主APX201哔哩哔哩账号—不想取名的阿peng完成一万粉丝目标，感谢你的支持。</div>
+    								<div class="right">
+    												<img src="images/1wmedal.png" alt="">
+    								</div>
+    				</div>
+    				<a href="https://b23.tv/Yo4FLRd"><button class="gold" style="display: block;margin: 0 auto;width:100%">感言</button></a>
+    </div>
+    
+    <div class="update-card box" id="updateCard" style="background-color:rgba(0,0,0,0.2);padding:3px;">
+  <p class="update-title">
+    网站更新日志
+    <span class="arrow">∨</span>
+  </p>
+  <div class="update-list">
+    1. 新增1w板块
+    2. 新增更新日志板块
+    3. 新增页面动画
+    4. 新增按钮动画反馈
+    5. 徽标新增深色适配，置底处理
+  </div>
+</div>
+     
+    <div class="box" style="background-color:rgba(0,0,0,0.2);padding:0;text-align:center;"><!--  -->
     				<span style="font-size:10px;">APX201主页•<a href="https://github.com/apx201/home">github</a></span>
     </div>
     <button id="theme-toggle" style="border-radius: 360px;height:50px;min-width:50px;position:fixed; left:80%; bottom:20px;">⇆</button>
-    <img src="images/logo.png" alt="" style="width:40px;position:fixed; left:20px; bottom:20px;">
+    <img src="images/logo.png" alt="" style="width:40px;position:fixed; left:20px; bottom:20px;" class="logo">
     <script src="script.js"></script>
 
 </body>

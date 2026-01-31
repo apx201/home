@@ -1,3 +1,15 @@
+/* 动画 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade {
+  opacity: 0;
+  animation: fadeIn .8s ease forwards;
+}
+
+
 @font-face {
     font-family: 'Minecraft'; 
     src: url('fonts/Minecraft.ttf');
@@ -41,9 +53,15 @@ button {
 				min-height: 20px;
 				border-radius: 5px;
 				box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-				border: 1px;
+				border: none;
 				min-width: 60px;
 				min-height: 25px;
+				transition: border 0.1s ease, 
+				background-color 0.2s ease;
+}
+button:hover {
+   background-color: rgba(0,0,0,0.5);
+			 border:1px solid white;
 }
 
 hr {
@@ -72,6 +90,7 @@ body.dark button {
 p,
 a {
 				font-size: 12px;
+				text-decoration: none;
 }
 
 a {
@@ -97,3 +116,86 @@ body.dark button {
 				box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
 }
 
+/* 1w */
+.gold {
+    position: relative;
+    background: linear-gradient(to bottom right, rgba(0,0,0,0), rgba(129,113,64,.4));
+    border: none;
+    padding: 1px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.gold::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 5px;
+    background: linear-gradient(to bottom right, #BAA86A, #564C29);
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0) padding-box;
+    mask-composite: exclude;
+    padding: 1px;
+}
+
+/* 分隔盒 */
+.split {
+  display: flex;
+  align-items: center;   /* 垂直居中，可选 */
+  gap: 16px;             /* 左右间距，可选 */
+}
+
+.left,
+.right {
+  flex: 1;               /* 各占 50 % */
+}
+
+.right img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 日志板块 */
+.update-card {
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    transition: max-height .3s ease;
+    max-height: 22px;
+}
+/* 展开后 */
+.update-card.open {
+    max-height: 200px;
+}
+/* 标题行 */
+.update-title {
+    font-size: 10px;
+    margin: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  /* 箭头旋转 */
+.arrow {
+    transition: transform .3s;
+}
+.update-card.open .arrow {
+    transform: rotate(180deg);
+}
+/* 日志列表默认隐藏 */
+.update-list {
+    margin: 2px 0 0 10px;
+    font-size: 2px;
+    white-space: pre-line;
+}
+
+/* 左下角徽标 */
+.logo {
+				z-index: -2;
+				opacity: 0.4;
+}
+body.dark .logo {
+  filter: brightness(0) invert(1);   /* 先压成黑，再反成白 */
+}
