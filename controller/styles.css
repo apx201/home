@@ -1,0 +1,31 @@
+.begin {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 230px;
+}
+
+.item {
+  text-align: center;
+}
+
+.item img {
+  width: 70px;
+  display: block;
+  margin: 0 auto;
+}
+
+.big {
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* start动画 */@keyframes flashIn {
+  0%   { opacity: 0; text-shadow: 0 0 10px #ffcc00; }
+  100% { opacity: 1; text-shadow: none; }
+}
+.big.run {
+  display: inline-block;
+  animation: flashIn .6s ease-out forwards;
+}
