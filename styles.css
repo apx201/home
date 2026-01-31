@@ -163,7 +163,7 @@ body.dark button {
     user-select: none;
     overflow: hidden;
     transition: max-height .3s ease;
-    max-height: 22px;
+    max-height: 18px;
 }
 /* 展开后 */
 .update-card.open {
