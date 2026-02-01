@@ -93,3 +93,46 @@ document.querySelectorAll('.counter').forEach(el => {
 document.getElementById('updateCard')?.addEventListener('click', function () {
   this.classList.toggle('open');
 });
+
+//轮播图
+function slide(id,d){
+  const vp=document.getElementById(id);
+  vp.scrollLeft+=d*vp.clientWidth;
+}
+
+
+//自动轮播
+function autoSlide(id, interval = 6000) {
+  const vp = document.getElementById(id);
+  let timer = null;
+
+  function next() {
+    const max = vp.scrollWidth - vp.clientWidth;
+    /* 到最后一张就滚回第一张，否则滚下一张 */
+    vp.scrollLeft = (vp.scrollLeft >= max) ? 0 : vp.scrollLeft + vp.clientWidth;
+  }
+
+  function start() {
+    stop();               // 先清旧计时器
+    timer = setInterval(next, interval);
+  }
+
+  function stop() {
+    clearInterval(timer);
+  }
+
+  /* 鼠标/触摸进入时暂停，离开继续 */
+  vp.addEventListener('mouseenter', stop);
+  vp.addEventListener('mouseleave', start);
+
+  /* 按钮点击后重新计时 */
+  vp.parentElement.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => { stop(); start(); });
+  });
+
+  start();   // 首次启动
+}
+
+/* 对两个轮播分别启用 */
+autoSlide('mbe-vp');
+autoSlide('ttu-vp');
