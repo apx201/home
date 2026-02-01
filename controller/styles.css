@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-top: 230px;
+  margin-top: 100px;
 }
 
 .item {
@@ -21,6 +21,12 @@
   margin-top: 8px;
 }
 
+.feature img {
+				width: 80%;
+				display: block;
+				border-radius: 5px;
+}
+
 /* start动画 */@keyframes flashIn {
   0%   { opacity: 0; text-shadow: 0 0 10px #ffcc00; }
   100% { opacity: 1; text-shadow: none; }
@@ -29,3 +35,12 @@
   display: inline-block;
   animation: flashIn .6s ease-out forwards;
 }
+
+/* 轮播图 */
+.feature{position:relative;width:90%;margin:0 auto;overflow:hidden}
+.viewport{display:flex;overflow-x:hidden;scroll-behavior:smooth;scroll-snap-type:x mandatory}
+.slide-group{width:100%;flex:none;scroll-snap-align:start;text-align:center}
+.slide-group img{width:100%;display:block}
+.nav-btn{position:absolute;top:90%;transform:translateY(-50%);padding:4px 8px}
+.prev{left:5px;}
+.next{right:5px;}
